@@ -32,6 +32,37 @@ return {
 		option = {},
 	},
 
+	["symbols-outline"] = {
+		open = "SymbolsOutlineOpen",
+		close = "SymbolsOutlineClose",
+		filetype = "Outline",
+		icon = "",
+		option = {},
+	},
+
+	["neotree-files"] = {
+		open = "Neotree focus filesystem left",
+		close = "Neotree close",
+		filetype = "neo-tree",
+		icon = "",
+		option = {},
+	},
+
+	["neotree-gitstatus"] = {
+		open = "Neotree focus git_status left",
+		close = "Neotree close",
+		filetype = "neo-tree",
+		icon = "",
+		option = {},
+	},
+
+	["neotree-buffers"] = {
+		open = "Neotree focus buffers left",
+		close = "Neotree close",
+		filetype = "neo-tree",
+		icon = "",
+		option = {},
+	},
 }
---   ﱮ    הּ  פּ  﨧ﲵ               
+--   ﱮ    הּ  פּ  﨧ﲵ              
 -- 
