@@ -39,11 +39,11 @@ function M.setbuf()
 	M.render()
 
 	local bufopts = {
-		{ name = "swapfile", val = false },
-		{ name = "buftype", val = "nofile" },
+		{ name = "swapfile",   val = false },
+		{ name = "buftype",    val = "nofile" },
 		{ name = "modifiable", val = false },
-		{ name = "filetype", val = M.ft },
-		{ name = "bufhidden", val = "hide" },
+		{ name = "filetype",   val = M.ft },
+		{ name = "bufhidden",  val = "hide" },
 	}
 	for _, opt in ipairs(bufopts) do
 		vim.bo[M.bufnr][opt.name] = opt.val
@@ -111,7 +111,7 @@ function M.open()
 	vim.cmd("buffer " .. M.bufnr)
 	vim.cmd("wincmd H")
 	M.winnr = vim.api.nvim_get_current_win()
-	vim.api.nvim_win_set_width(0, 2)
+	vim.api.nvim_win_set_width(0, 1)
 
 	M.set_win_hi()
 
@@ -138,11 +138,11 @@ function M.setCursor()
 	vim.api.nvim_win_set_cursor(win, { active.count * 2, 1 })
 	vim.api.nvim_win_set_width(active.win, ops.width)
 	if ops.focus_on_open then
-		--  TODO: 
+		--  TODO:
 		vim.cmd("wincmd 10h")
 		vim.cmd("wincmd l")
 	else
-		--  TODO: 
+		--  TODO:
 		vim.cmd("wincmd 10h")
 		vim.cmd("wincmd 2l")
 	end
@@ -156,7 +156,7 @@ function M.getActive()
 		count = count + 1
 		local win, bufnr = M.getWinByFileType(builtin.filetype)
 		if win then
-			return { count = count, builtin = builtin, win=win, bufnr=bufnr }
+			return { count = count, builtin = builtin, win = win, bufnr = bufnr }
 		end
 	end
 	return false
@@ -176,4 +176,5 @@ end
 function M.isOpen()
 	return M.getWinByFileType(M.ft)
 end
+
 return M
